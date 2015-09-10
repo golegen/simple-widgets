@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Radio Player</title>
+		<link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css" />
+		<link rel="stylesheet" href="css/radio.css" />
+		
+		<style>
+			#radio-wrapper {
+				width: 364px;
+				height: 362px;
+				margin: 40px auto;
+			}
+		</style>
+		
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="js/libs/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/libs/modernizr.custom.89766.js"></script>
+		<script src="js/libs/soundmanager/script/soundmanager2.js"></script>
+		<script src="js/libs/muplayer/player.js"></script>
+		
+		<script src="js/radio-with-sm2.js"></script>
+		<script>
+			$(function() {
+				new Radios('#qx-radio');
+				respond.init();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="radio-wrapper">
+			
+			<div id="qx-radio" class="qx-radio-widget">
+				<div class="qx-radio-error">
+					<div class="qx-radio-error-inner">
+						<span class="qx-radio-logo"></span>
+						<span class="qx-radio-error-info">正在修理麦克风请稍候再来</span>
+						<a class="qx-radio-button-refresh" href="">刷新</a>
+					</div>
+				</div>
+				<div class="qx-radio-player">
+					<h1 class="qx-radio-logo"></h1>
+					<div class="qx-radio-player-loading">
+						<div class="qx-radio-player-loading-inner">
+							<span class="qx-radio-logo"></span>
+							<span class="qx-radio-player-loading-text">is on the air</span>
+							<span class="qx-radio-player-loading-icon"></span>
+						</div>
+					</div>
+					<div class="qx-radio-player-state">
+						<div class="qx-radio-player-state-loading">
+							<div class="qx-radio-player-state-loading-icon"></div>
+							<div class="qx-radio-player-state-loading-overlay"></div>
+						</div>
+						<a class="qx-radio-button-play qx-radio-state-play" href="">
+							<span class="qx-radio-button-icon"></span>
+						</a>
+						<div class="qx-radio-player-album-pane">
+							<img class="qx-radio-player-album" alt="" src="" />
+							<span class="qx-radio-player-album-overlay"></span>
+						</div>
+						<div class="qx-radio-player-progressbar">
+							<div class="qx-radio-player-progressbar-value"></div>
+							<div class="qx-radio-player-progressbar-cover-left">
+								<div class="qx-radio-player-progressbar-cover-left-inner"></div>
+							</div>
+							<div class="qx-radio-player-progressbar-cover-right"></div>
+						</div>
+					</div>
+					<p class="qx-radio-player-info">
+						<a href="" class="qx-radio-player-info-name" target="_blank"></a>
+						<span class="qx-radio-player-info-artist"></span>
+					</p>
+					<div class="qx-radio-player-control">
+						<a class="qx-radio-button-volume-switch qx-radio-state-voiced" href=""></a>
+						<div class="qx-radio-player-volume-bar"></div>
+						<a class="qx-radio-button-next" href=""></a>
+					</div>
+				</div>
+				<div class="qx-radio-channels">
+					<div class="qx-radio-channels-control-pane">
+						<ul>
+							<li class="qx-radio-channels-control">
+								<a class="qx-radio-button-expand qx-radio-state-expand" href="">
+									<span class="qx-radio-button-icon"></span>
+									<span class="qx-radio-button-text">
+										<span class="qx-radio-cur-channel-label">当前电台：</span>
+										<span class="qx-radio-cur-channel-text">随心听</span>
+										<span class="qx-radio-button-text-highlight">换电台</span>
+									</span>
+								</a>
+							</li>
+							<li class="qx-radio-channels-sub">
+								<a class="qx-radio-link" href="http://www.xiami.com" target="_blank">虾米音乐提供</a>
+							</li>
+						</ul>
+						<div class="qx-radio-channels-control-pane-overlay"></div>
+					</div>
+					<div class="qx-radio-channels-types-pane">
+						<div class="qx-radio-channels-loading"></div>
+						<div class="qx-radio-channels-types-pane-inner">
+							
+							<!-- template 
+							<ul class="qx-radio-channels-types">
+								<li class="qx-radio-channels-type-active">
+									<a href="">90后</a>
+								</li>
+								<li>
+									<a href="">90后</a>
+								</li>
+								<li>
+									<a href="">90后</a>
+								</li>
+								<li>
+									<a href="">90后</a>
+								</li>
+								<li>
+									<a href="">90后</a>
+								</li>
+								<li>
+									<a href="">90后</a>
+								</li>
+								<li>
+									<a href="">90后</a>
+								</li>
+								<li>
+									<a href="">90后</a>
+								</li>
+							</ul>
+							<a class="qx-radio-button-change-types" href="">
+								<span class="qx-radio-button-icon"></span>
+								<span class="qx-radio-button-text">换一换</span>
+							</a>
+							-->
+							
+						</div>
+						<div class="qx-radio-channels-types-pane-overlay"></div>
+					</div>
+						
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
