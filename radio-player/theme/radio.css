@@ -1,42 +1,29 @@
-div, p,
-h1, h2, h3, h4, h5, h6,
-ul, li {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-}
-
-ol, ul {
-	list-style: none;
-}
-
-.qx-radio-widget {
-	width: 100%;
-	height: 100%;
+.radio-widget {
+	width: 364px;
+	height: 362px;
+	margin: 40px auto;
 	position: relative;
 	font: 16px/1 "Microsoft YaHei", Helvetica, Verdana, sans-serif;
 	background: url(img/bg-container.png) no-repeat center center;
 }
 
-.qx-radio-widget a {
+.radio-widget a {
 	text-decoration: none;
 	outline: none;
 }
 
-.qx-radio-player,
-.qx-radio-player-loading {
+.radio-player,
+.radio-player-loading {
 	width: 100%;
 	height: 100%;
 }
 
-.qx-radio-player {
+.radio-player {
 	position: relative;
 	z-index: 1;
 }
 
-.qx-radio-player h1.qx-radio-logo {
+.radio-player h1.radio-logo {
 	width: 63px;
 	height: 21px;
 	position: absolute;
@@ -46,7 +33,7 @@ ol, ul {
 	background: url(img/font-radio-logo-mini.png) no-repeat;
 }
 
-.qx-radio-player-loading {
+.radio-player-loading {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -55,7 +42,7 @@ ol, ul {
 	text-align: center;
 }
 
-.qx-radio-player-loading-inner {
+.radio-player-loading-inner {
 	width: 131px;
 	margin-left: -65px;
 	position: absolute;
@@ -63,7 +50,7 @@ ol, ul {
 	left: 50%;
 }
 
-.qx-radio-player-loading .qx-radio-logo {
+.radio-player-loading .radio-logo {
 	display: block;
 	width: 87px;
 	height: 29px;
@@ -71,14 +58,14 @@ ol, ul {
 	background: url(img/font-radio-logo.png) no-repeat;
 }
 
-.qx-radio-player-loading .qx-radio-player-loading-text {
+.radio-player-loading .radio-player-loading-text {
 	display: block;
 	margin-bottom: 0.7916em;
 	font-size: 1.5em;
 	color: #166478;
 }
 
-.qx-radio-player-loading .qx-radio-player-loading-icon {
+.radio-player-loading .radio-player-loading-icon {
 	display: block;
 	width: 44px;
 	height: 44px;
@@ -86,7 +73,7 @@ ol, ul {
 	background: url(img/icon-loading-blue.gif) no-repeat;
 }
 
-.qx-radio-player-state {
+.radio-player-state {
 	width: 10.75em; /*172px*/
 	height: 10.75em;
 	margin-left: -5.375em;
@@ -95,7 +82,7 @@ ol, ul {
 	left: 50%;
 }
 
-.qx-radio-player-state-loading {
+.radio-player-state-loading {
 	display: none;
 	width: 10.75em; /*172px*/
 	height: 10.75em;
@@ -106,7 +93,7 @@ ol, ul {
 	z-index: 4;
 }
 
-.qx-radio-player-state-loading-icon {
+.radio-player-state-loading-icon {
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -114,7 +101,7 @@ ol, ul {
 	background: url(img/icon-loading-black.gif) no-repeat center center;
 }
 
-.qx-radio-player-state-loading-overlay {
+.radio-player-state-loading-overlay {
 	width: 10.75em;
 	height: 10.75em;
 	padding: 5px;
@@ -127,11 +114,11 @@ ol, ul {
 	filter: alpha(opacity=80);
 }
 
-.csstransforms .qx-radio-player-state-loading-overlay {
+.csstransforms .radio-player-state-loading-overlay {
 	border-radius: 50%;
 }
 
-.qx-radio-button-play {
+.radio-button-play {
 	width: 10.75em; /*172px*/
 	height: 10.75em;
 	padding: 5px;
@@ -142,7 +129,7 @@ ol, ul {
 	cursor: pointer;
 }
 
-.qx-radio-button-play .qx-radio-button-icon {
+.radio-button-play .radio-button-icon {
 	width: 44px;
 	height: 44px;
 	margin: -22px 0 0 -22px;
@@ -152,15 +139,15 @@ ol, ul {
 	background: url(img/icon-button-play.png) no-repeat;
 }
 
-.qx-radio-state-play .qx-radio-button-icon {
+.radio-state-play .radio-button-icon {
 	background-position: 0 0;
 }
 
-.qx-radio-state-pause .qx-radio-button-icon {
+.radio-state-pause .radio-button-icon {
 	background-position: -44px 0;
 }
 
-.qx-radio-player-album-pane {
+.radio-player-album-pane {
 	width: 10.75em;
 	height: 10.75em;
 	padding: 5px;
@@ -170,7 +157,7 @@ ol, ul {
 	z-index: 3;
 }
 
-.qx-radio-player-album-overlay {
+.radio-player-album-overlay {
 	width: 10.75em;
 	height: 10.75em;
 	position: absolute;
@@ -183,7 +170,7 @@ ol, ul {
 	filter: alpha(opacity=80);
 }
 
-.qx-radio-player-album {
+.radio-player-album {
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -194,16 +181,28 @@ ol, ul {
 	background: #ccc;
 }
 
-.no-opacity .qx-radio-player-album {
+.radio-player-album.radio-player-album-rotate {
+	-webkit-animation: cycle 8s linear 0s infinite;
+	-moz-animation: cycle 8s linear 0s infinite;
+	animation: cycle 8s linear 0s infinite;
+}
+
+.radio-player-album.radio-player-album-pause {
+	-webkit-animation-play-state: paused;
+	-moz-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.no-opacity .radio-player-album {
 	height: 11.375em;
 }
 
-.csstransforms .qx-radio-player-album,
-.csstransforms .qx-radio-player-album-overlay {
+.csstransforms .radio-player-album,
+.csstransforms .radio-player-album-overlay {
 	border-radius: 50%;
 }
 
-.qx-radio-player-progressbar {
+.radio-player-progressbar {
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -215,12 +214,12 @@ ol, ul {
 	z-index: 1;
 }
 
-.csstransforms .qx-radio-player-progressbar {
+.csstransforms .radio-player-progressbar {
 	display: block;
 	border-radius: 50%;
 }
 
-.qx-radio-player-progressbar-value {
+.radio-player-progressbar-value {
 	width: 10.75em;
 	height: 10.75em;
 	padding: 7px;
@@ -234,8 +233,8 @@ ol, ul {
 	filter: alpha(opacity=80);
 }
 
-.qx-radio-player-progressbar-cover-left,
-.qx-radio-player-progressbar-cover-right {
+.radio-player-progressbar-cover-left,
+.radio-player-progressbar-cover-right {
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -245,7 +244,7 @@ ol, ul {
 	z-index: 2;
 }
 
-.qx-radio-player-progressbar-cover-right {
+.radio-player-progressbar-cover-right {
 	left: 50%;
 	z-index: 3;
 	background: #389cab;
@@ -256,11 +255,11 @@ ol, ul {
 	transform-origin: left center;
 }
 
-.qx-radio-player-progressbar-cover-left {
+.radio-player-progressbar-cover-left {
 	overflow: hidden;
 }
 
-.qx-radio-player-progressbar-cover-left-inner {
+.radio-player-progressbar-cover-left-inner {
 	width: 100%;
 	height: 100%;
 	background: #389cab;
@@ -271,7 +270,7 @@ ol, ul {
 	transform-origin: right center;
 }
 
-.qx-radio-player-info {
+.radio-player-info {
 	width: 90%;
 	margin-left: -45%;
 	position: absolute;
@@ -280,7 +279,7 @@ ol, ul {
 	text-align: center;
 }
 
-.qx-radio-player-info-name {
+.radio-player-info-name {
 	display: block;
 	width: 100%;
 	margin-bottom: 0.2em;
@@ -291,7 +290,7 @@ ol, ul {
 	color: #bde6eb;
 }
 
-.qx-radio-player-info-artist {
+.radio-player-info-artist {
 	display: block;
 	height: 1.25em;
 	overflow: hidden;
@@ -300,7 +299,7 @@ ol, ul {
 	color: #a2d6db;
 }
 
-.qx-radio-player-control {
+.radio-player-control {
 	width: 144px;
 	height: 25px;
 	margin-left: -72px; 
@@ -310,7 +309,7 @@ ol, ul {
 	overflow: hidden;
 }
 
-.qx-radio-button-volume-switch {
+.radio-button-volume-switch {
 	width: 20px;
 	height: 20px;
 	margin: 2px 6px 0 0;
@@ -320,23 +319,23 @@ ol, ul {
 	cursor: pointer;
 }
 
-.qx-radio-state-voiced {
+.radio-state-voiced {
 	background-position: 0 0;
 }
 
-.qx-radio-state-voiced:hover {
+.radio-state-voiced:hover {
 	background-position: -20px 0;
 }
 
-.qx-radio-state-mute {
+.radio-state-mute {
 	background-position: -40px 0;
 }
 
-.qx-radio-state-mute:hover {
+.radio-state-mute:hover {
 	background-position: -60px 0;
 }
 
-.qx-radio-player-volume-bar {
+.radio-player-volume-bar {
 	width: 66px;
 	height: 2px;
 	margin-top: 11px;
@@ -344,7 +343,7 @@ ol, ul {
 	background: #72afb2;
 }
 
-.qx-radio-player-volume-bar .ui-slider-handle {
+.radio-player-volume-bar .ui-slider-handle {
 	width: 24px;
 	height: 24px;
 	margin-left: -11px;
@@ -353,17 +352,17 @@ ol, ul {
 	background: url(img/icon-button-volumebar.png) no-repeat;
 }
 
-.qx-radio-player-volume-bar .ui-slider-handle:hover {
+.radio-player-volume-bar .ui-slider-handle:hover {
 	background-position: -24px 0;
 }
 
-.qx-radio-player-volume-bar .ui-slider-range {
+.radio-player-volume-bar .ui-slider-range {
 	height: 2px;
 	overflow: hidden;
 	background: #fff;
 }
 
-.qx-radio-button-next {
+.radio-button-next {
 	width: 20px;
 	height: 20px;
 	float: right;
@@ -371,18 +370,18 @@ ol, ul {
 	cursor: pointer;
 }
 
-.qx-radio-button-next:hover {
+.radio-button-next:hover {
 	background-position: -20px 0;
 }
 
-.qx-radio-button-next:active {
+.radio-button-next:active {
 	background-position: -40px 0;
 }
 
 /*
  * channels
  */
-.qx-radio-channels {
+.radio-channels {
 	width: 100%;
 	height: 2em;
 	position: absolute;
@@ -391,7 +390,7 @@ ol, ul {
 	z-index: 2;
 }
 
-.qx-radio-channels-loading {
+.radio-channels-loading {
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -402,8 +401,8 @@ ol, ul {
 	background: url(img/icon-loading-black.gif) no-repeat center center;
 }
 
-.qx-radio-channels-control-pane-overlay,
-.qx-radio-channels-types-pane-overlay {
+.radio-channels-control-pane-overlay,
+.radio-channels-types-pane-overlay {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -415,38 +414,38 @@ ol, ul {
 	filter: alpha(opacity=80);
 }
 
-.qx-radio-channels-control-pane {
+.radio-channels-control-pane {
 	height: 2em;
 	position: relative;
 }
 
-.qx-radio-channels-control-pane ul {
+.radio-channels-control-pane ul {
 	width: 100%;
 	position: absolute;
 	overflow: hidden;
 	z-index: 1;
 }
 
-.qx-radio-channels-control-pane li {
+.radio-channels-control-pane li {
 	float: right;
 }
 
-.qx-radio-channels-control-pane .qx-radio-channels-control {
+.radio-channels-control-pane .radio-channels-control {
 	float: left;
 }
 
-.qx-radio-channels-control-pane .qx-radio-channels-sub {
+.radio-channels-control-pane .radio-channels-sub {
 	padding-right: 0.937em;
 	line-height: 1.9em;
 }
 
-.qx-radio-channels-control-pane .qx-radio-link {
+.radio-channels-control-pane .radio-link {
 	display: block;
 	font-size: 12px;
 	color: #666;
 }
 
-.qx-radio-button-expand {
+.radio-button-expand {
 	height: 100%;
 	padding: 0 0 0 0.937em;
 	position: relative;
@@ -457,11 +456,11 @@ ol, ul {
 	cursor: pointer;
 }
 
-.qx-radio-button-expand span {
+.radio-button-expand span {
 	float: left;
 }
 
-.qx-radio-button-expand .qx-radio-button-icon {
+.radio-button-expand .radio-button-icon {
 	width: 16px;
 	height: 16px;
 	margin-top: -8px;
@@ -472,31 +471,31 @@ ol, ul {
 	background: url(img/icon-button-expand.png) no-repeat;
 }
 
-.qx-radio-button-expand .qx-radio-button-text {
+.radio-button-expand .radio-button-text {
 	padding-left: 21px;
 }
 
-.qx-radio-button-expand .qx-radio-button-text-highlight {
+.radio-button-expand .radio-button-text-highlight {
 	margin-left: 0.437em;
 }
 
-.qx-radio-state-expand .qx-radio-button-icon {
+.radio-state-expand .radio-button-icon {
 	background-position: 0 0;
 }
 
-.qx-radio-state-collapse .qx-radio-button-icon {
+.radio-state-collapse .radio-button-icon {
 	background-position: -16px 0;
 }
 
-.qx-radio-state-expand .qx-radio-button-text-highlight {
+.radio-state-expand .radio-button-text-highlight {
 	color: #3EACA9;
 }
 
-.qx-radio-state-collapse .qx-radio-button-text-highlight {
+.radio-state-collapse .radio-button-text-highlight {
 	color: #999;
 }
 
-.qx-radio-channels-types-pane {
+.radio-channels-types-pane {
 	display: none;
 	width: 100%;
 	height: 5em;
@@ -505,26 +504,26 @@ ol, ul {
 	left: 0;
 }
 
-.qx-radio-channels-types-pane-inner {
+.radio-channels-types-pane-inner {
 	width: 100%;
 	position: absolute;
 	z-index: 1;
 	overflow: hidden;
 }
 
-.qx-radio-channels-types {
+.radio-channels-types {
 	width: 15.125em;
 	padding: 0.875em 0 0 0.937em;
 	overflow: hidden;
 	float: left;
 }
 
-.qx-radio-channels-types li {
+.radio-channels-types li {
 	width: 3.562em; /*58.5px*/
 	float: left;
 }
 
-.qx-radio-channels-types li a {
+.radio-channels-types li a {
 	display: block;
 	padding: 1px;
 	text-align: center;
@@ -532,17 +531,17 @@ ol, ul {
 	color: #fff;
 }
 
-.qx-radio-channels-types li a:hover {
+.radio-channels-types li a:hover {
 	color: #3EADAA;
 }
 
-.qx-radio-channels-types .qx-radio-channels-type-active a {
+.radio-channels-types .radio-channels-type-active a {
 	padding: 0;
 	color: #3EADAA;
 	border: solid 1px #3EADAA;
 }
 
-.qx-radio-button-change-types {
+.radio-button-change-types {
 	padding: 0.4285em 0.642em;
 	margin-left: 0.357em;
 	position: relative;
@@ -556,18 +555,18 @@ ol, ul {
 	cursor: pointer;
 }
 
-.qx-radio-button-change-types:hover {
+.radio-button-change-types:hover {
 	border-color: #546061;
 	background: #455052;
 }
 
-.qx-radio-button-change-types:active {
+.radio-button-change-types:active {
 	border-color: #364245;
 	background: #2d3a3c;
 	color: #9da3a4;
 }
 
-.qx-radio-button-change-types .qx-radio-button-icon {
+.radio-button-change-types .radio-button-icon {
 	width: 16px;
 	height: 16px;
 	margin-right: 0.357em;
@@ -575,11 +574,11 @@ ol, ul {
 	background: url(img/icon-button-change.png) no-repeat;
 }
 
-.qx-radio-button-change-types .qx-radio-button-text {
+.radio-button-change-types .radio-button-text {
 	float: left;
 }
 
-.qx-radio-error {
+.radio-error {
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -590,7 +589,7 @@ ol, ul {
 	background: url(img/bg-container.png) no-repeat center center;
 }
 
-.qx-radio-error-inner {
+.radio-error-inner {
 	width: 144px;
 	margin-left: -72px;
 	position: absolute;
@@ -598,7 +597,7 @@ ol, ul {
 	left: 50%;
 }
 
-.qx-radio-error .qx-radio-logo {
+.radio-error .radio-logo {
 	display: block;
 	width: 87px;
 	height: 29px;
@@ -606,7 +605,7 @@ ol, ul {
 	background: url(img/font-radio-logo.png) no-repeat;
 }
 
-.qx-radio-error-info {
+.radio-error-info {
 	display: block;
 	margin-bottom: 1.4em;
 	font-size: 1.25em; /*20px*/
@@ -615,7 +614,7 @@ ol, ul {
 	color: #146074;
 }
 
-.qx-radio-button-refresh {
+.radio-button-refresh {
 	display: block;
 	width: 4.9285em;
 	margin: 0 auto;
@@ -627,89 +626,40 @@ ol, ul {
 	color: #146074;
 }
 
-.qx-radio-button-refresh:hover {
+.radio-button-refresh:hover {
 	border: solid 1px #287277;
 	background: #5ce2e9;
 }
 
-.qx-radio-button-refresh:active {
+.radio-button-refresh:active {
 	border: solid 1px #287277;
 	background: #4bbcc2;
 }
 
-/*
- * fix png for ie6
- */
-*html .qx-radio-player-album {
-	width: 11.375em;
-	height: 11.375em;
+@-webkit-keyframes cycle {
+	0% {
+		-webkit-transform: rotate(0);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
 }
 
-*html .qx-radio-player h1.qx-radio-logo {
-	background: none;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/font-radio-logo-mini.png");
+@-moz-keyframes cycle {
+	0% {
+		-moz-transform: rotate(0);
+	}
+	100% {
+		-moz-transform: rotate(360deg);
+	}
 }
 
-*html .qx-radio-error .qx-radio-logo {
-	background: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/font-radio-logo.png");
+@keyframes cycle {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
-*html .qx-radio-player-loading .qx-radio-logo {
-	background: none;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/font-radio-logo.png");	
-}
-
-*html .qx-radio-button-play .qx-radio-button-icon {
-	background: none;
-}
-
-*html .qx-radio-state-play .qx-radio-button-icon {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/icon-button-play-play.png");
-}
-
-*html .qx-radio-state-pause .qx-radio-button-icon {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/icon-button-play-pause.png");
-}
-
-*html .qx-radio-button-expand .qx-radio-button-icon {
-	background: none;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/icon-button-expand.png", sizingMethod="crop");	
-}
-
-*html .qx-radio-button-volume-switch {
-	background: none;
-}
-
-*html .qx-radio-state-voiced {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/icon-button-volume-voiced.png", sizingMethod="crop");	
-}
-
-*html .qx-radio-state-mute {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/icon-button-volume-mute.png", sizingMethod="crop");	
-}
-
-*html .qx-radio-player-volume-bar .ui-slider-handle {
-	background: none;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/icon-button-volumebar.png", sizingMethod="crop");
-}
-
-*html .qx-radio-button-next {
-	background: none;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/icon-button-next.png", sizingMethod="crop");
-}
-
-*html .qx-radio-button-change-types {
-	margin-top: 0;
-	position: relative;
-	top: 2.071em;
-}
-
-*html .qx-radio-button-change-types .qx-radio-button-icon {
-	background: none;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/img/icon-button-change.png");	
-}
-
-.qx-radio-widget a {
-	font-style: expression((function(el) {el.style.fontStyle = 'normal'; el.hideFocus = true;})(this));
-}
